@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Legal AI Assistant</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Page header -->
+  <header class="topbar">
+    <div class="brand">
+      <img src="/logo.png" alt="Logo" height="36" />
+      <h1>Legal AI Assistant</h1>
+    </div>
+  </header>
+
+  <!-- Full-screen chat container -->
+  <main class="main-grid">
+    <section class="chat-area">
+      <div id="chat-container" style="height:100vh;"></div>
+    </section>
+
+    <aside class="side-area">
+      <h3>Actions & Info</h3>
+      <p>Upload documents, saved strategies and tips will appear here (future).</p>
+    </aside>
+  </main>
+
+  <!-- Botpress webchat embed (example) -->
+  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+  <script>
+    // Replace the placeholders below with your Botpress values
+    window.botpressWebChat.init({
+      botId: "YOUR_BOT_ID",            // << replace
+      hostUrl: "https://cdn.botpress.cloud/webchat/v1",
+      messagingUrl: "https://messaging.botpress.cloud",
+      clientId: "YOUR_CLIENT_ID",      // << replace
+      containerId: "chat-container",
+      containerClass: "embedded-chat",
+      layout: {
+        fullScreenMode: true
+      },
+      // optional branding
+      botName: "Legal Strategy Assistant",
+      welcomeMessage: "Hello — I can help identify your legal issue and build a strategy."
+    });
+  </script>
+</body>
+</html>
