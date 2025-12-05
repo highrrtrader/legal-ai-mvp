@@ -1,0 +1,9 @@
+[build]
+  publish = "/"
+  command = ""
+
+# If you later have SPAs or client-side routes, add redirect for single-page app:
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
