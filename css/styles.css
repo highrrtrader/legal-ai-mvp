@@ -1,13 +1,11 @@
 :root {
-  /* Existing colors */
-  --accent: #0b5cff;
+  /* Branding colors */
+  --gold: #FFD700;
+  --dark: #1a1a1a;
   --bg: #f5f7fb;
   --panel: #ffffff;
   --text: #111827;
-
-  /* New branding colors */
-  --gold: #FFD700;
-  --dark: #1a1a1a;
+  --accent: #0b5cff;
 }
 
 /* Global styles */
@@ -22,7 +20,7 @@ html, body {
 /* Header */
 .topbar {
   height: 64px;
-  background: var(--gold); /* Changed from panel to gold */
+  background: var(--gold);
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -45,7 +43,7 @@ html, body {
   grid-template-columns: 1fr 320px; /* Chat area + side panel */
   gap: 16px;
   padding: 16px;
-  height: calc(100vh - 128px); /* subtract header + footer */
+  height: calc(100vh - 128px); /* Leave space for header + footer */
   background: var(--bg);
 }
 
@@ -55,6 +53,7 @@ html, body {
   border-radius: 12px;
   overflow: hidden;
   width: 100%;
+  height: 100%;
 }
 
 /* Side panel */
@@ -75,5 +74,22 @@ footer {
   justify-content: center;
   font-weight: bold;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
-  position: relative;
+}
+
+/* --- Botpress chat overrides --- */
+
+/* Make Botpress chat fill chat-area fully */
+#chat-container > div.bp-widget-container {
+  width: 100% !important;      /* full width */
+  height: 100% !important;     /* full height */
+  max-width: none !important;  /* remove internal max width */
+  margin: 0 !important;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Ensure the chat iframe fills the container */
+#chat-container iframe {
+  width: 100% !important;
+  height: 100% !important;
 }
