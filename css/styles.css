@@ -1,12 +1,79 @@
-:root{
-  --accent:#0b5cff;
-  --bg:#f5f7fb;
-  --panel:#ffffff;
-  --text:#111827;
+:root {
+  /* Existing colors */
+  --accent: #0b5cff;
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --text: #111827;
+
+  /* New branding colors */
+  --gold: #FFD700;
+  --dark: #1a1a1a;
 }
-html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;}
-.topbar{height:64px;background:var(--panel);display:flex;align-items:center;padding:0 24px;box-shadow:0 1px 0 rgba(0,0,0,0.05);}
-.brand{display:flex;gap:12px;align-items:center}
-.main-grid{display:grid;grid-template-columns:1fr 320px;gap:16px;padding:16px;height:calc(100vh - 64px);background:var(--bg)}
-.chat-area{background:transparent;border-radius:12px;overflow:hidden}
-.side-area{background:var(--panel);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+
+/* Global styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Header */
+.topbar {
+  height: 64px;
+  background: var(--gold); /* Changed from panel to gold */
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  color: var(--dark);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Brand logo + name */
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Main content grid */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px; /* Chat area + side panel */
+  gap: 16px;
+  padding: 16px;
+  height: calc(100vh - 128px); /* subtract header + footer */
+  background: var(--bg);
+}
+
+/* Chat area */
+.chat-area {
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Side panel */
+.side-area {
+  background: var(--panel);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* Footer */
+footer {
+  height: 64px;
+  background-color: var(--gold);
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+  position: relative;
+}
